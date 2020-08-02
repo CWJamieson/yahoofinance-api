@@ -7,6 +7,7 @@ package yahoofinance.histquotes;
  */
 public enum Interval {
     
+    HOURLY("h"),
     DAILY("d"),
     WEEKLY("w"),
     MONTHLY("m");
