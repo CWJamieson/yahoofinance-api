@@ -103,7 +103,7 @@ public class HistQuotesQuery2V8Request {
         JsonNode highs = quotes.get("high");
         JsonNode lows = quotes.get("low");
         JsonNode meta = resultNode.get("meta");
-        JsonNode res = meta.get("dataGranularity")
+        JsonNode res = meta.get("dataGranularity");
 
         List<HistoricalQuote> result = new ArrayList<HistoricalQuote>();
         for (int i = 0; i < timestamps.size(); i++) {
