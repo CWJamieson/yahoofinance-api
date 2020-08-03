@@ -133,26 +133,26 @@ public class HistQuotes2Request {
         BufferedReader br = new BufferedReader(is);
         br.readLine(); // skip the first line
         // Parse CSV
-        for (String line = br.readLine(); line != null; line = br.readLine()) {
-
-            log.info("Parsing CSV line: " + Utils.unescape(line));
-            HistoricalQuote quote = this.parseCSVLine(line);
-            result.add(quote);
-        }
+//        for (String line = br.readLine(); line != null; line = br.readLine()) {
+//
+//            log.info("Parsing CSV line: " + Utils.unescape(line));
+//            HistoricalQuote quote = this.parseCSVLine(line);
+//            result.add(quote);
+//        }
         return result;
     }
 
-    private HistoricalQuote parseCSVLine(String line) {
-        String[] data = line.split(YahooFinance.QUOTES_CSV_DELIMITER);
-        return new HistoricalQuote(this.symbol,
-                Utils.parseHistDate(data[0]),
-                Utils.getBigDecimal(data[1]),
-                Utils.getBigDecimal(data[3]),
-                Utils.getBigDecimal(data[2]),
-                Utils.getBigDecimal(data[4]),
-                Utils.getBigDecimal(data[5]),
-                Utils.getLong(data[6])
-        );
-    }
+//    private HistoricalQuote parseCSVLine(String line) {
+//        String[] data = line.split(YahooFinance.QUOTES_CSV_DELIMITER);
+//        return new HistoricalQuote(this.symbol,
+//                Utils.parseHistDate(data[0]),
+//                Utils.getBigDecimal(data[1]),
+//                Utils.getBigDecimal(data[3]),
+//                Utils.getBigDecimal(data[2]),
+//                Utils.getBigDecimal(data[4]),
+//                Utils.getBigDecimal(data[5]),
+//                Utils.getLong(data[6])
+//        );
+//    }
 
 }

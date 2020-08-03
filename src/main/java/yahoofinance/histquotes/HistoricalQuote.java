@@ -21,20 +21,17 @@ public class HistoricalQuote {
     private BigDecimal high;
     private BigDecimal close;
     
-    private BigDecimal adjClose;
-    
     private Long volume;
     
     public HistoricalQuote() {}
 
-    public HistoricalQuote(String symbol, Calendar date, BigDecimal open, BigDecimal low, BigDecimal high, BigDecimal close, BigDecimal adjClose, Long volume) {
+    public HistoricalQuote(String symbol, Calendar date, BigDecimal open, BigDecimal low, BigDecimal high, BigDecimal close, Long volume) {
         this.symbol = symbol;
         this.date = date;
         this.open = open;
         this.low = low;
         this.high = high;
         this.close = close;
-        this.adjClose = adjClose;
         this.volume = volume;
     }
 
