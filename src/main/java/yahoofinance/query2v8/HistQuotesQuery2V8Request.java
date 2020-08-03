@@ -102,6 +102,8 @@ public class HistQuotesQuery2V8Request {
         JsonNode opens = quotes.get("open");
         JsonNode highs = quotes.get("high");
         JsonNode lows = quotes.get("low");
+        JsonNode meta = resultNode.get("meta");
+        JsonNode res = meta.get("dataGranularity")
 
         List<HistoricalQuote> result = new ArrayList<HistoricalQuote>();
         for (int i = 0; i < timestamps.size(); i++) {
@@ -115,13 +117,14 @@ public class HistQuotesQuery2V8Request {
             BigDecimal close = closes.get(i).decimalValue();
 
             HistoricalQuote quote = new HistoricalQuote(
-                symbol,
-                calendar,
-                open,
-                low,
-                high,
-                close,
-                volume);
+                    symbol,
+                    calendar,
+                    open,
+                    low,
+                    high,
+                    close,
+                    volume,
+                    res);
             result.add(quote);
         }
 
