@@ -91,22 +91,6 @@ public class HistoricalQuote {
         this.close = close;
     }
 
-    /**
-     * The adjusted closing price on a specific date 
-     * reflects all of the dividends and splits since that day.
-     * The adjusted closing price from a date in history can be used to 
-     * calculate a close estimate of the total return, including dividends, 
-     * that an investor earned if shares were purchased on that date.
-     * @return      the adjusted close price
-     */
-    public BigDecimal getAdjClose() {
-        return adjClose;
-    }
-
-    public void setAdjClose(BigDecimal adjClose) {
-        this.adjClose = adjClose;
-    }
-
     public Long getVolume() {
         return volume;
     }
@@ -120,6 +104,6 @@ public class HistoricalQuote {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String dateStr = dateFormat.format(this.date.getTime());
         return this.symbol + "@" + dateStr + ": " + this.low + "-" + this.high + ", " + 
-                this.open + "->" + this.close + " (" + this.adjClose + ")";
+                this.open + "->" + this.close;
     }
 }
