@@ -43,7 +43,6 @@ public class HistoricalQuoteRequestTest extends MockedServersTest {
 
         for(HistoricalQuote histQuote : goog.getHistory()) {
             assertEquals("GOOG", histQuote.getSymbol());
-            assertTrue(histQuote.getAdjClose().compareTo(BigDecimal.ZERO) > 0);
             assertTrue(histQuote.getClose().compareTo(BigDecimal.ZERO) > 0);
             assertTrue(histQuote.getHigh().compareTo(BigDecimal.ZERO) > 0);
             assertTrue(histQuote.getLow().compareTo(BigDecimal.ZERO) > 0);
@@ -54,7 +53,6 @@ public class HistoricalQuoteRequestTest extends MockedServersTest {
 
         HistoricalQuote histQuote = goog.getHistory().get(5);
 
-        assertEquals(new BigDecimal("693.01001"), histQuote.getAdjClose());
         assertEquals(new BigDecimal("693.01001"), histQuote.getClose());
         assertEquals(new BigDecimal("769.900024"), histQuote.getHigh());
         assertEquals(new BigDecimal("689.00"), histQuote.getLow());
