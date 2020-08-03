@@ -20,10 +20,23 @@ public class HistoricalQuote {
     private BigDecimal low;
     private BigDecimal high;
     private BigDecimal close;
+
+    private String resolution;
     
     private Long volume;
     
     public HistoricalQuote() {}
+
+    public HistoricalQuote(String symbol, Calendar date, BigDecimal open, BigDecimal low, BigDecimal high, BigDecimal close, Long volume, String resolution) {
+        this.symbol = symbol;
+        this.date = date;
+        this.open = open;
+        this.low = low;
+        this.high = high;
+        this.close = close;
+        this.volume = volume;
+        this.resolution = resolution;
+    }
 
     public HistoricalQuote(String symbol, Calendar date, BigDecimal open, BigDecimal low, BigDecimal high, BigDecimal close, Long volume) {
         this.symbol = symbol;
@@ -97,6 +110,14 @@ public class HistoricalQuote {
 
     public void setVolume(Long volume) {
         this.volume = volume;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
     }
     
     @Override
